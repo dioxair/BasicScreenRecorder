@@ -6,13 +6,17 @@
         Title="BasicScreenRecorder"
         Width="400"
         Height="400"
+        WindowStartupLocation="CenterScreen"
         x:Class="BasicScreenRecorder.MainWindow">
+
+    <Window.Styles>
+        <StyleInclude Source="/Styles/RecordButton.axaml" />
+    </Window.Styles>
+
     <Grid x:Name="MainGrid">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <Button Content="Start Recording" Margin="8" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="150" Height="150" />
-            <Button Content="Stop Recording" Margin="8" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="150" Height="150" />
+            <Button Content="Start Recording" Classes="RecordButton"/>
+            <Button Content="Stop Recording" Classes="RecordButton" />
         </StackPanel>
     </Grid>
 </Window>
