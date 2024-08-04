@@ -35,7 +35,7 @@ public partial class MainWindow : Window
         string videoName = $"BasicScreenRecorder-{DateTime.Now:yyyy-MM-dd H-mm-ss}.mp4";
 
         string videoPath =
-            $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\BasicScreenRecorder\Videos\{videoName}";
+            $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\BasicScreenRecorder\{videoName}";
         _rec = Recorder.CreateRecorder(_recOptions);
         _rec.Record(videoPath);
     }
