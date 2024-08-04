@@ -11,6 +11,19 @@ public partial class MainWindow : Window
 {
     Recorder _rec;
 
+    // technically i COULD use this class to make the screen recorder have a whole bunch of cool stuff
+    // and actually be viable for normal use, but i'm way to lazy for that (hence "BasicScreenRecorder")
+    // so i'm only going to enable audio and have nothing else be accessible to the user
+    private RecorderOptions _recOptions = new()
+    {
+        AudioOptions = new AudioOptions
+        {
+            Bitrate = AudioBitrate.bitrate_128kbps,
+            Channels = AudioChannels.Stereo,
+            IsAudioEnabled = true
+        }
+    };
+
     public MainWindow()
     {
         InitializeComponent();
@@ -23,7 +36,7 @@ public partial class MainWindow : Window
 
         string videoPath =
             $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\BasicScreenRecorder\Videos\{videoName}";
-        _rec = Recorder.CreateRecorder();
+        _rec = Recorder.CreateRecorder(_recOptions);
         _rec.Record(videoPath);
     }
 
