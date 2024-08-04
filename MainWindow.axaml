@@ -15,8 +15,8 @@
 
     <Grid x:Name="MainGrid">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <Button Content="Start Recording" Classes="RecordButton"/>
-            <Button Content="Stop Recording" Classes="RecordButton" />
+            <Button x:Name="StartRecordingButton" Content="Start Recording" Classes="RecordButton" Click="StartRecordingButton_OnClick" />
+            <Button x:Name="StopRecordingButton" Content="Stop Recording" Classes="RecordButton" Click="StopRecordingButton_OnClick" />
         </StackPanel>
     </Grid>
 </Window>
